@@ -1,0 +1,9 @@
+services:
+  naswallpaper:
+    image: leaosunday/naswallpaper:latest
+    volumes:
+      - ./wallpaper:/ugreen/wallpaper
+    environment:
+      - CRON_SCHEDULE=0 8 * * *
+      - WALLPAPER_DIR=/ugreen/wallpaper
+    restart: unless-stopped
