@@ -20,6 +20,7 @@ download_wallpaper() {
         if curl -sSL -o "$temp_file" "https://bing.img.run/rand_uhd.php"; then
             if [ -s "$temp_file" ]; then
                 mv "$temp_file" "$WALLPAPER_DIR/default_233.jpg"
+                chmod 755 "$WALLPAPER_DIR/default_233.jpg"
                 echo "Wallpaper downloaded successfully at $(date)"
                 return 0
             fi
