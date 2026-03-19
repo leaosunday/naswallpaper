@@ -1,5 +1,3 @@
-https://bing.img.run/rand_uhd.php
-
 # NAS Wallpaper
 
 Docker application for automatically downloading Bing daily wallpapers to Ugreen NAS.
