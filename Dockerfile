@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-RUN apk add --no-cache curl crontab
+RUN apk add --no-cache curl cronie
 
 ENV CRON_SCHEDULE="0 8 * * *"
 ENV WALLPAPER_DIR="/ugreen/wallpaper"
