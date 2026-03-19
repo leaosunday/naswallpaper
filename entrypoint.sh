@@ -44,4 +44,4 @@ echo "$CRON_SCHEDULE cd /app && /entrypoint.sh download_only" > /etc/crontabs/ro
 
 # Start cron in foreground
 echo "Starting cron scheduler..."
-crond -f -L /dev/stdout
+crond -f -s
