@@ -36,12 +36,18 @@ download_wallpaper() {
     return 1
 }
 
+# Check if running in download_only mode (called by cron)
+if [ "$1" = "download_only" ]; then
+    download_wallpaper
+    exit $?
+fi
+
 # Download wallpaper immediately on startup
 echo "Downloading initial wallpaper..."
 download_wallpaper || echo "Initial download failed, will retry on next cron run"
 
 # Setup cron
-echo "$CRON_SCHEDULE cd /app && /entrypoint.sh download_only" > /etc/crontabs/root
+echo "$CRON_SCHEDULE /app/download.sh" > /etc/crontabs/root
 
 # Start cron in foreground
 echo "Starting cron scheduler..."

@@ -7,8 +7,8 @@ ENV WALLPAPER_DIR="/ugreen/wallpaper"
 
 WORKDIR /app
 
-COPY entrypoint.sh /entrypoint.sh
+COPY entrypoint.sh download.sh ./
 
-RUN chmod +x /entrypoint.sh
+RUN chmod +x ./entrypoint.sh ./download.sh
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["./entrypoint.sh"]
